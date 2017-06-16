@@ -38,8 +38,8 @@ def parse(target, problemChr, mode):
 
 def main():
     codeforcesURL = 'http://www.codeforces.com/contest/'
-    print (Fore.RED + "\n      Parser" + Fore.GREEN + "" + Fore.WHITE)
-    contestCode = int(input("Contest code: " ))
+    print(Fore.RED + "\n      Parser" + Fore.WHITE)
+    contestCode = int(input("Contest Code: " ))
 
     mainPageURL = codeforcesURL + str(contestCode)
     page = urlopen(mainPageURL)
