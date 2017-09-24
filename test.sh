@@ -21,7 +21,8 @@ done < $pathe
 
 fla=0
 
-clang++ -std=c++11 -stdlib=libc++ -O2 -Wall -Wshadow -I /usr/local/include $name || fla=1
+# clang++ -std=c++11 -stdlib=libc++ -O2 -Wall -Wshadow -I /usr/local/include $name || fla=1
+g++-7 $name || fla=1
 if [ $fla -eq 1 ]
 then
   echo -e "\033[1;31mCompilation Error\x1b[0m"
