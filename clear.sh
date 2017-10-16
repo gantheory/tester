@@ -1,5 +1,5 @@
 # !/bin/bash
-rm *.in
-rm *.out
-rm *.rc
-rm result.txt
+rm testcases/*.in
+rm testcases/*.out
+rm testcases/*.rc
+rm contest_information.txt

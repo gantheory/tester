@@ -2,7 +2,7 @@
 name=$1
 contest_code=0
 problem_code=${name:0:1}
-pathe=$HOME'/Github/tester/result.txt'
+pathe=$HOME'/Github/tester/contest_information.txt'
 DONE=false
 todo=0
 tot=0
@@ -11,7 +11,6 @@ until $DONE
 do
   read line || DONE=true
   foo=$(($foo+1))
-  # echo "${line}"
   if [ ${foo} = 1 ]; then
     contest_code=${line}
   elif [[ ${line:0:1} == $problem_code ]]; then
@@ -22,7 +21,7 @@ done < $pathe
 fla=0
 
 # clang++ -std=c++11 -stdlib=libc++ -O2 -Wall -Wshadow -I /usr/local/include $name || fla=1
-g++-7 $name || fla=1
+g++-7 -O2 -Wall -Wshadow $name || fla=1
 if [ $fla -eq 1 ]
 then
   echo -e "\033[1;31mCompilation Error\x1b[0m"
@@ -35,7 +34,7 @@ do
   echo '----------------------------------------'
   u=1
   todo=$((todo+1))
-  pathe=$HOME'/Github/tester/'
+  pathe=$HOME'/Github/tester/testcases/'
   temppath=$pathe$problem_code$todo'.in'
   x=0
   # timeout 2 ./a.out <$temppath> $pathe$problem_code$todo'.rc' || x=1

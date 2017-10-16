@@ -2,3 +2,5 @@
 *.out
 *.rc
 *.txt
+.vscode/*
+*.pyc
